@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+crash.log
+terraform.tfstate*
+
+# Lambda
+lambda.zip
+*.zip
+
+# Sensitive
+*.pem
+*.key
