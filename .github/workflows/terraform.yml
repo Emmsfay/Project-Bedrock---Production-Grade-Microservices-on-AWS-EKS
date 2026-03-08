@@ -2,9 +2,9 @@ name: Terraform CI/CD
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   terraform:
@@ -31,6 +31,9 @@ jobs:
       - name: Terraform Plan
         if: github.event_name == 'pull_request'
         run: terraform plan
+
+      - name: Build Lambda zip
+        run: zip lambda.zip lambda_function.py
 
       - name: Terraform Apply
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
