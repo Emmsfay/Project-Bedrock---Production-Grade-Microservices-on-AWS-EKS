@@ -1,4 +1,4 @@
 variable "student_id" {
   description = "Unique student ID"
-  type        = string
+  default     = "2354e"
 }

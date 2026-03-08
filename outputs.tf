@@ -1,5 +1,5 @@
 output "assets_bucket_name" {
-  value = "bedrock-assets-${var.student_id}"
+  value = aws_s3_bucket.assets.bucket
 }
 
 output "cluster_endpoint" {
@@ -16,8 +16,4 @@ output "region" {
 
 output "vpc_id" {
   value = module.vpc.vpc_id
-}
-
-output "assets_bucket_name" {
-  value = aws_s3_bucket.assets.bucket
 }
